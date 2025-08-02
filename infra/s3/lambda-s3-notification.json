@@ -1,0 +1,19 @@
+{
+  "LambdaFunctionConfigurations": [
+    {
+      "Id": "invokeTriggerGlueJob",
+      "LambdaFunctionArn": "arn:aws:lambda:sa-east-1:335202747221:function:trigger-glue-job",
+      "Events": ["s3:ObjectCreated:Put"],
+      "Filter": {
+        "Key": {
+          "FilterRules": [
+            {
+              "Name": "suffix",
+              "Value": ".parquet"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
